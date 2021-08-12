@@ -22,21 +22,29 @@ This Project are deployed to fill a requirement of TakaLab Job Vacancies for bac
 
 ## Installation
 
-1. Unzip the file
+1. clone this repo 
+```html
+git clone https://github.com/tasyaekap/takatest.git
+```
 
-2. set database configuration on config/config.json & config/db.js
+2. Install All the dependencies
+```html
+npm install
+```
 
-3. migrate the migration
+3. set database configuration on config/config.json & config/db.js
+
+4. migrate the migration
 ```html
 sequelize db:migrate
 ```
 
-4. type on terminal to turn on redis server
+5. type on terminal to turn on redis server
 ```html
 redis-server
 ```
 
-5. Run on terminal
+6. Run on terminal
 ```html
 npm start
 ```
@@ -52,7 +60,7 @@ to regist all user that involved.
 http://localhost:8888/register
 ```
 
-#### Input
+#### Params
 ```html
 {"username": username, "password":password}
 ```
@@ -67,12 +75,12 @@ to sign in into the system
 http://localhost:8888/login
 ```
 
-#### Input
+#### Params
 ```html
 {"username": username, "password":password}
 ```
 
-#### Output
+#### Response
 ```html
 {
     "id": userid,
@@ -90,7 +98,7 @@ registering new master product
 http://localhost:8888/product
 ```
 
-#### Input
+#### Params
 ```html
 {
     "productName": productName,
@@ -99,7 +107,7 @@ http://localhost:8888/product
 }
 ```
 
-#### Output
+#### Response
 ```html
 {
     "message":"Data Saved!"
@@ -115,7 +123,7 @@ registering new master product
 http://localhost:8888/api/add-to-cart
 ```
 
-#### Input
+#### Params
 ```html
 {   
     "productName": productName,
@@ -123,7 +131,7 @@ http://localhost:8888/api/add-to-cart
 }
 ```
 
-#### Output
+#### Response
 ```html
 {
     "message":"Data Saved!"
@@ -139,7 +147,7 @@ Checkout all the product in cart (flush all the product in cart in redis to db)
 http://localhost:8888/api/checkout
 ```
 
-#### Output
+#### Response
 ```html
 {
     "message":"Data Saved!"
@@ -155,7 +163,7 @@ performed to reduce all the product stock
 http://localhost:8888/api/paymentconfirmation
 ```
 
-#### Output
+#### Response
 ```html
 {
     "message":"Data Saved!"
@@ -171,7 +179,7 @@ method to calculating customer loyalty point based on total amount of monthly tr
 http://localhost:8888/api/loyaltyPoint
 ```
 
-#### Input
+#### Params
 ```html
 {
         "user": username,
@@ -188,7 +196,7 @@ http://localhost:8888/api/loyaltyPoint
     }
 ```
 
-#### Output
+#### Response
 ```html
 {
     "totalAmountTransaction": totalAmmountTransaction,
